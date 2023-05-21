@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-void storeSessionData(String key, String value) async {
+Future<void> storeSessionData(String key, String value) async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   await prefs.setString(key, value);
 }

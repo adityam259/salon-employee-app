@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salonemployee/MyDrawer.dart';
 import 'api_service.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -10,25 +11,7 @@ class DashboardPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Dashboard'),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(
-              title: Text('Menu Item 1'),
-              onTap: () {
-                // Handle menu item 1 tap
-              },
-            ),
-            ListTile(
-              title: Text('Menu Item 2'),
-              onTap: () {
-                // Handle menu item 2 tap
-              },
-            ),
-            // Add more ListTile widgets for additional menu items
-          ],
-        ),
-      ),
+      drawer: MyDrawer(),
       body: const MyStatefulWidget(),
     );
   }
@@ -53,7 +36,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   Future<void> getOrderCompleteCount() async {
     final String countComplete = await ApiService.getOrderCompleteCount();
-    print(countComplete);
+    //print(countComplete);
     setState(() {
       completeCount = countComplete;
     });
@@ -61,7 +44,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   Future<void> getOrderPendingCount() async {
     final String countPending = await ApiService.getOrderPendingCount();
-    print(countPending);
+    //print(countPending);
 
     setState(() {
       pendingCount = countPending;

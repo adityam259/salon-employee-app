@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:salonemployee/constants.dart';
 import 'package:flutter/services.dart';
+import 'package:salonemployee/orderHistory.dart';
+import 'package:salonemployee/showOrder.dart';
+import 'OngoingOrder.dart';
 import 'api_service.dart';
 import 'DashboardPage.dart'; // Import the dashboard_page.dart file
 
@@ -18,6 +21,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/dashboard': (context) => DashboardPage(),
+        '/orderHistory': (context) => OrderHistory(),
+        '/ongoingOrders': (context) => OngoingOrder(),
+        '/showOrder': (context) => ShowOrder(),
+        '/logout': (context) => MyApp(),
       },
       home: Scaffold(
         appBar: AppBar(title: const Text(title)),
